@@ -13,7 +13,7 @@ class TaskController extends Controller
     public function addCategoriesToTask(Request $request, $TaskId)
     {
         $task = Task::findOrFail($TaskId);
-        $task->categories()->attach($request->category_id); //ربط المهمة بال category المدخلة ك request
+        $task->categories()->attach($request->category_id); 
         return response()->json('Category attached Successfully', 200);
     }
     public function getTaskCategory($taskId)
